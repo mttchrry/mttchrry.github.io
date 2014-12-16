@@ -3,6 +3,34 @@
 	font-family: 'Lucida Grande', sans-serif;
 }
 
-h1.center {
-	text-center;
+h1 {
+	color: #666666;
+	font-size: 50px;
+	margin-bottom:25px;
+}
+
+p {
+	color: #666666;
+	font-size: 18px;
+	line-height: 180%;
+}
+
+h2 {
+	margin-top: 0;
+	color: #f07c17;
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom:25px;
+}
+
+.box-section {
+	margin-top: 30px;
+	border: 1px solid #cccccc;
+	padding: 30px;
+}
+
+ul {
+	color: #666666;
+	font-size: 18px;
+	line-height: 180%;
 }
