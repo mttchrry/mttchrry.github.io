@@ -6,3 +6,7 @@
 .h4 {
 	font-family: 'Lato', sans-serif;
 }
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
