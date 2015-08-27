@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cherry-portfolio">
     <head>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js">
-        </script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script type="text/javascript" src="js/cherry-portfolio.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
         <meta charset="UTF-8">
     </head>
@@ -16,7 +17,7 @@
                   <img class="img-responsive" src="images\cherry.jpg"></div>
                 <div class="col-md-6 text-right text-uppercase texthead">
                     <h1>Matt Cherry</h1>
-                    <h4>General Badassery</h3>
+                    <h4>Diversified Programming Portfolio</h3>
                 </div>
             </div>
             <div class="row">
@@ -34,30 +35,39 @@
                     <h2>Featured Work</h2>
                 </div>
             </div>
-            <div class="row">
+            <div ng-controller="AccomplishmentsController as accomplishments">
+              <div ng-repeat="accomplishment in accomplishments.list">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="{{accomplishment.img}}" data-toggle="modal" data-target="#project1">
+                    <h3>{{accomplishment.text}}</h3>
+                    <p><a href="{{accomplishment.link}}">link to {{accomplishment.text}}</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <img class="img-responsive" src="images\resume.png" data-toggle="modal" data-target="#project1">
-                    <h3>Resume</h3>
-                    <p><a href="http://rawgit.com/mttchrry/frontend-nanodegree-resume/master/index.html">Link to Resume</a></p>
+                    <h3>resume</h3>
+                    <p><a href="http://rawgit.com/mttchrry/frontend-nanodegree-resume/master/index.html">link to resume</a></p>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-responsive" src="images\froggerGame.PNG" data-toggle="modal" data-target="#project2">
-                    <h3>Frogger Arcade Game</h3>
-                    <p><a href="http://rawgit.com/mttchrry/frontend-nanodegree-arcade-game/master/index.html">Link to Game</a></p>
+                    <img class="img-responsive" src="images\froggergame.png" data-toggle="modal" data-target="#project2">
+                    <h3>frogger arcade game</h3>
+                    <p><a href="http://rawgit.com/mttchrry/frontend-nanodegree-arcade-game/master/index.html">link to game</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <img class="img-responsive" src="http://placekitten.com/g/555/300" data-toggle="modal" data-target="#project3">
-                    <h3>Appify</h3>
-                    <p><a href="http://github.com">Link to project</a></p>
+                    <h3>appify</h3>
+                    <p><a href="http://github.com">link to project</a></p>
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive" src="http://placekitten.com/g/555/300" data-toggle="modal" data-target="#project4">
-                    <h3>Appify</h3>
-                    <p><a href="http://github.com">Link to project</a></p>
+                    <h3>appify</h3>
+                    <p><a href="http://github.com">link to project</a></p>
                 </div>
-            </div>
+            </div> -->
         </div>
         <!-- Modal -->
         <div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
