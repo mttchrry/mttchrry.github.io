@@ -38,9 +38,26 @@
             <div ng-controller="AccomplishmentsController as accomplishments">
               <div ng-repeat="accomplishment in accomplishments.list" ng-class-even="'row'">
                 <div class="col-md-6">
-                  <img class="img-responsive" src="{{accomplishment.img}}" data-toggle="modal" data-target="#project1">
+                  <img class="img-responsive" src="{{accomplishment.img}}" data-toggle="modal" data-target="#{{accomplishment.text}}">
+                  <!-- project1"> -->
                   <h3>{{accomplishment.text}}</h3>
                   <p><a href="{{accomplishment.link}}">link to {{accomplishment.text}}</a></p>
+                </div>
+                  <div class="modal fade" id="{{accomplishment.text}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="myModalLabel">Favorite App Page</h4>
+                        </div>
+                        <div class="modal-body">
+                          <img class="img-responsive" src="{{accomplishment.img}}">
+                          {{accomplishment.summary}}
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
